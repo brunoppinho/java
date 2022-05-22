@@ -1,0 +1,20 @@
+# Configurações globais
+global:
+  scrape_interval: 15s # Vai buscar(scrap) as métricas a cada 15s por padrão
+
+# Regras que quando atingidas geram alertas
+rule_files:
+#  - first.rules
+
+# Lista de serviços para monitorar
+scrape_configs:
+  - job_name: 'prometheus'
+    scrape_interval: 5s
+    static_configs:
+      - targets: [ 'localhost:9090' ]
+
+  - job_name: 'actuator-app-exemplo'
+    metrics_path: '/actuator/prometheus' # Como obter as métricas
+    scrape_interval: 5s
+    static_configs:
+      - targets: [ 'app-example:8080' ]

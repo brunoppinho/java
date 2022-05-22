@@ -1,0 +1,41 @@
+version: "3"
+services:
+  app-example:
+    image: docker.io/letscode/actuator:latest
+    ports:
+      - "9391:9391"
+    networks:
+      - letscode
+    environment:
+      - MANAGEMENT_SERVER_PORT=8080
+
+  prometheus:
+    image: prom/prometheus:v2.35.0
+    depends_on:
+      - app-example
+    networks:
+      - letscode
+    ports:
+      - "9090:9090"
+    restart: always
+    volumes:
+      - ./config:/etc/prometheus
+      - prometheus-data:/prometheus
+    command: --config.file=/etc/prometheus/prometheus.yml
+
+  grafana:
+    image: grafana/grafana
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    depends_on:
+      - prometheus
+    ports:
+      - "3000:3000"
+    networks:
+      - letscode
+
+networks:
+  letscode:
+
+volumes:
+  prometheus-data:
