@@ -1,0 +1,28 @@
+server:
+  port: 9995
+spring:
+  application:
+    name: gateway-app
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: EUREKA-CLIENT-EXAMPLE
+          uri: lb://EUREKA-CLIENT-EXAMPLE
+          predicates:
+            - Path=/eureka/**
+          filters:
+            - RewritePath=/eureka/(?<path>.*), /$\{path}
+        - id: FEIGN-EXAMPLE
+          uri: lb://FEIGN-EXAMPLE
+          predicates:
+            - Path=/feign/**
+          filters:
+            - RewritePath=/feign/(?<path>.*), /$\{path}
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka

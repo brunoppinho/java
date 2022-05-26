@@ -6,6 +6,7 @@ bibliotecas para facilitar o desenvolvimento baseado em nuvem e microserviços.
 1. [Eureka Server](/eureka-server/README.md)
 2. [Feign](/feign/README.md)
 3. [Resilience4J](/resilience/README.md)
+4. [Gateway](/gateway/README.md)
 
 # Bibliografia
 
