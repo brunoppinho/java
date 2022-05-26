@@ -1,5 +1,23 @@
 server:
   port: 9995
+
+management:
+  port: 9995
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    gateway:
+      enabled: true
+    metrics:
+      enabled: true
+    health:
+      show-details: always
+  info:
+    env:
+      enabled: true
+
 spring:
   application:
     name: gateway-app

@@ -34,6 +34,12 @@ Testar:
 * http://localhost:9995/eureka/hello
 * http://localhost:9995/feign/hello
 
+# Actuator
+
+Caso usemos o actuator, o endpoint do health vai buscar a saúde de todas as aplicações que estão sendo redirecionadas.
+
+Pelo endpoint /actuator/gateway/routes é possível obter também todas as rotas que estão sendo tratadas.
+
 # Bibliografia
 
 * https://cloud.spring.io/spring-cloud-gateway/reference/html/
