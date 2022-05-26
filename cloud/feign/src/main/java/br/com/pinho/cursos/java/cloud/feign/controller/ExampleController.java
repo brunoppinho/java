@@ -1,6 +1,6 @@
 package br.com.pinho.cursos.java.cloud.feign.controller;
 
-import br.com.pinho.cursos.java.cloud.feign.service.CommunicateService;
+import br.com.pinho.cursos.java.cloud.feign.gateway.eurekaclient.ExemploControllerApi;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -10,10 +10,10 @@ import java.util.Map;
 @RestController
 public class ExampleController {
 
-    private final CommunicateService service;
+    private final ExemploControllerApi exemploControllerApi;
 
-    public ExampleController(CommunicateService communicateService) {
-        this.service = communicateService;
+    public ExampleController(ExemploControllerApi communicateService) {
+        this.exemploControllerApi = communicateService;
     }
 
     @GetMapping("hello")
@@ -25,7 +25,7 @@ public class ExampleController {
     public Map<String, String> communicate() {
         HashMap<String, String> map = new HashMap<>();
         map.put("client", "Hello World - Feign App");
-        map.put("server", service.execute());
+        map.put("server", exemploControllerApi.helloWorld());
         return map;
     }
 

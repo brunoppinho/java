@@ -18,7 +18,7 @@ estará pronto para ser usado.
 
 # Prática
 
-[Service](/src/main/java/br/com/pinho/cursos/java/cloud/feign/service/CommunicateService.java)
+[Service](/src/main/java/br/com/pinho/cursos/java/cloud/feign/gateway/eurekaclient/ExemploControllerApi.java)
 
 # Bibliografia
 

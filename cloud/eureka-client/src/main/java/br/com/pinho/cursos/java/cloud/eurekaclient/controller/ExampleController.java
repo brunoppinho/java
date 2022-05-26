@@ -10,16 +10,14 @@ import java.util.Map;
 
 @RestController
 @RequiredArgsConstructor
-public class ExampleController {
+public class ExampleController implements ExemploControllerApi {
 
     private final CommunicateService service;
 
-    @GetMapping("hello")
     public String helloWorld() {
         return "Hello World - Eureka Client App";
     }
 
-    @GetMapping("communicate")
     public Map<String, String> communicate() {
         HashMap<String, String> map = new HashMap<>();
         map.put("client", "Hello World - Eureka Client App");

@@ -41,7 +41,7 @@ Para isso adicione a seguinte dependência:
 
     <dependency>
         <groupId>org.springframework.cloud</groupId>
-        <artifactId>spring-cloud-starter-netflix-eureka-starter</artifactId>
+        <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
     </dependency>
 
 Adicione também em uma classe de configuração
