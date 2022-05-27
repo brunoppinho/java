@@ -40,7 +40,23 @@ Caso usemos o actuator, o endpoint do health vai buscar a saúde de todas as apl
 
 Pelo endpoint /actuator/gateway/routes é possível obter também todas as rotas que estão sendo tratadas.
 
+# Segurança
+
+Adicionar dependência
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+
+> @EnableWebFluxSecurity
+
+## Keycloak
+
+> docker run --name myKeyCloak -p 8089:8080 -e KEYCLOAK_USER=admin -e KEYCLOAK_PASSWORD=admin -d jboss/keycloak:12.0.4
+
 # Bibliografia
 
 * https://cloud.spring.io/spring-cloud-gateway/reference/html/
 * https://dzone.com/articles/quick-guide-to-microservices-with-spring-boot-20-e
+* https://migueldoctor.medium.com/run-keycloak-locally-using-docker-and-secure-your-apps-in-3-steps-f6c554427e54

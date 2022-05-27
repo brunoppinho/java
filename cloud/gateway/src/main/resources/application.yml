@@ -39,6 +39,10 @@ spring:
             - Path=/feign/**
           filters:
             - RewritePath=/feign/(?<path>.*), /$\{path}
+  security:
+    user:
+      name: admin
+      password: admin
 
 eureka:
   client:
