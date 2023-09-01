@@ -5,13 +5,11 @@ public class Funcionario {
     private double valorHora;
     private double horasMensaisContratuais;
     private double horasMensaisTrabalhadas;
-    private CalculaRecebimento calculaRecebimento;
 
-    public Funcionario(double valorHora, double horasMensaisContratuais, double horasMensaisTrabalhadas, CalculaRecebimento calculaRecebimento) {
+    public Funcionario(double valorHora, double horasMensaisContratuais, double horasMensaisTrabalhadas) {
         this.valorHora = valorHora;
         this.horasMensaisContratuais = horasMensaisContratuais;
         this.horasMensaisTrabalhadas = horasMensaisTrabalhadas;
-        this.calculaRecebimento = calculaRecebimento;
     }
 
     public double getValorHora() {
@@ -38,7 +36,4 @@ public class Funcionario {
         this.horasMensaisTrabalhadas = horasMensaisTrabalhadas;
     }
 
-    public double calculaSalario() {
-        return calculaRecebimento.calculaSalario(horasMensaisContratuais, valorHora, horasMensaisTrabalhadas);
-    }
 }
