@@ -1,15 +1,11 @@
 package br.com.pinho.cursos.java.oo.solid.o.correto;
 
-public class Terceirizado extends Funcionario implements CalculaRecebimento {
-
-    public Terceirizado(double valorHora, double horasMensaisContratuais, double horasMensaisTrabalhadas) {
-        super(valorHora, horasMensaisContratuais, horasMensaisTrabalhadas);
-    }
+public class Terceirizado implements CalculaRecebimento {
 
     @Override
-    public double calculaSalario() {
+    public double calculaSalario(double horasMensaisContratuais, double valorHora, double horasMensaisTrabalhadas) {
         double salario = 0;
-        salario = getHorasMensaisContratuais() * getValorHora();
+        salario = horasMensaisContratuais * valorHora;
         return salario;
     }
 }

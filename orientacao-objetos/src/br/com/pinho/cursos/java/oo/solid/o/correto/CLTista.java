@@ -1,16 +1,12 @@
 package br.com.pinho.cursos.java.oo.solid.o.correto;
 
-public class CLTista extends Funcionario implements CalculaRecebimento {
-
-    public CLTista(double valorHora, double horasMensaisContratuais, double horasMensaisTrabalhadas) {
-        super(valorHora, horasMensaisContratuais, horasMensaisTrabalhadas);
-    }
+public class CLTista implements CalculaRecebimento {
 
     @Override
-    public double calculaSalario() {
+    public double calculaSalario(double horasMensaisContratuais, double valorHora, double horasMensaisTrabalhadas) {
         double salario = 0;
-        salario = getHorasMensaisContratuais() * getValorHora();
-        salario += (getHorasMensaisTrabalhadas() - getHorasMensaisContratuais()) * 1.5 * getValorHora();
+        salario = horasMensaisContratuais * valorHora;
+        salario += (horasMensaisTrabalhadas - horasMensaisContratuais) * 1.5 * valorHora;
         return salario;
     }
 }
